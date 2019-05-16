@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, Button} from 'react-native';
+import {View, Text, Button, SectionList} from 'react-native';
 import {connect} from 'react-redux';
 import styles from './styles';
 import {requestCountries} from '../../actions';
@@ -19,7 +19,17 @@ class AppContainer extends Component{
                         console.log("btn press")
                     }
                 } title="fetch"></Button>
-                {this.renderCountryNames()}
+                <SectionList
+            sections={[
+                {title: 'World Countries', data: this.props.countries},
+            ]}
+            
+            renderItem={({item,index, section}) => <Text style={styles.countryName}>{item.name}</Text>}
+
+            renderSectionHeader={({section}) => <Text style={styles.sectionHeader}>{section.title}</Text>}
+            
+            keyExtractor={(item, index) => index+item}
+            />
             </View>   
         );
     }

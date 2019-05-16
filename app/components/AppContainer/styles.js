@@ -5,6 +5,11 @@ export default StyleSheet.create({
         flex: 1,
     },
     countryName:{
-        flex:1
+        flex:1,
+        textAlign: 'center'
+    },
+    sectionHeader:{
+        fontWeight: 'bold',
+        fontSize: 20 
     }
 });
