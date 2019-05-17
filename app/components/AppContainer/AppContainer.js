@@ -3,13 +3,8 @@ import {View, Text, Button, SectionList} from 'react-native';
 import {connect} from 'react-redux';
 import styles from './styles';
 import {requestCountries} from '../../actions';
-class AppContainer extends Component{
-    renderCountryNames(){
-        let names = [];
-        this.props.countries.forEach(element => names.push((<Text>{element.name}</Text>)));
-        return names;
-    }
-    
+import CountryListItem from '../CountryListItem';
+class AppContainer extends Component{    
     render(){
         return (
             <View style={styles.container}>
@@ -24,7 +19,7 @@ class AppContainer extends Component{
                 {title: 'World Countries', data: this.props.countries},
             ]}
             
-            renderItem={({item,index, section}) => <Text style={styles.countryName}>{item.name}</Text>}
+            renderItem={({item,index, section}) => <CountryListItem country={item}></CountryListItem>}
 
             renderSectionHeader={({section}) => <Text style={styles.sectionHeader}>{section.title}</Text>}
             

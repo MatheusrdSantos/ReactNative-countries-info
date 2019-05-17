@@ -22,16 +22,4 @@ class App extends Component {
     }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  countryName: {
-    flexGrow: 1
-  }
-});
-
 export default App;
