@@ -19,7 +19,7 @@ class AppContainer extends Component{
                 {title: 'World Countries', data: this.props.countries},
             ]}
             
-            renderItem={({item,index, section}) => <CountryListItem country={item}></CountryListItem>}
+            renderItem={({item,index, section}) => <CountryListItem country={item} callDetails={this.props.callDetails}></CountryListItem>}
 
             renderSectionHeader={({section}) => <Text style={styles.sectionHeader}>{section.title}</Text>}
             
