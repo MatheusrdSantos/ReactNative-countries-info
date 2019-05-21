@@ -8,7 +8,7 @@ class CountryListItem extends Component{
 
     render(){
         return (
-            <View style={styles.container} onTouchStart={this.callDetails}>
+            <View style={styles.container} onTouchEnd={this.callDetails}>
                 <Text style={styles.countryName}>{this.props.country.name}</Text>
                 <Text style={styles.countryPopulation}>{this.props.country.population}</Text>
             </View>
