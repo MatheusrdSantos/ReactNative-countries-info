@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 import {View, Text, StyleSheet} from 'react-native';
 
 class CountryDetailsScreen extends Component {
+    static navigationOptions = ({ navigation }) => {
+        return {
+            title: navigation.getParam('data').name,
+        };
+    };
   render() {
     return (
         <View style={styles.container}>
