@@ -6,6 +6,8 @@ const countryReducer = (state = INITIAL_STATE, action) =>{
             return {...state, all:action.payload};
         case COUNTRY_ACTIONS.SELECT_COUNTRY:
             return {...state, selectedCountry: action.payload};
+        case COUNTRY_ACTIONS.SET_FILTER:
+            return {...state, filter: action.payload}
         default:
             return state;
     }

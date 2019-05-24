@@ -3,12 +3,14 @@ import axios from 'axios';
 export const COUNTRY_ACTIONS = {
     FETCH_COUNTRIES_NAME: 'FETCH_COUNTRIES_NAME',
     REQUEST_COUNTRIES: 'REQUEST_COUNTRIES',
-    SELECT_COUNTRY: 'SELECT_COUNTRY'
+    SELECT_COUNTRY: 'SELECT_COUNTRY',
+    SET_FILTER: 'SET_FILTER'
 }
 
 export const INITIAL_STATE = {
     all:[],
-    selectedCountry: {}
+    selectedCountry: {},
+    filter:''
 }
 
 export function fetchCountries(data){
@@ -26,4 +28,8 @@ export const requestCountries = () => {
 
 export function selectCountry(country){
     return {type: COUNTRY_ACTIONS.SELECT_COUNTRY, payload: country}
+}
+
+export function setCountriesFilter(filter){
+    return {type: COUNTRY_ACTIONS.SET_FILTER, payload: filter};
 }

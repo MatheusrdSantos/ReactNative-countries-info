@@ -1,24 +1,15 @@
 import React, { Component } from 'react'
 import {TextInput} from 'react-native';
-import { Container, Header, Item, Input, Icon, Button, Text } from 'native-base';
+import {connect} from 'react-redux';
 import AppContainer from '../components/AppContainer'
-
+import HomeSearchBar from '../components/HomeSearchBar';
 
 
 class HomeScreen extends Component {
     static navigationOptions = {
         title: 'Home',
         header:(
-            <Header searchBar rounded style={{backgroundColor: '#373681'}}>
-            <Item>
-                <Icon name="ios-search" />
-                <Input placeholder="Search" />
-                <Icon type="MaterialIcons" name="place" />
-            </Item>
-            <Button transparent>
-                <Text>Search</Text>
-            </Button>
-            </Header>
+            <HomeSearchBar></HomeSearchBar>
         ),
         headerStyle: {
             backgroundColor: '#373681',
@@ -37,5 +28,5 @@ class HomeScreen extends Component {
         )
     }
 }
-      
+
 export default HomeScreen
