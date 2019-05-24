@@ -32,7 +32,7 @@ class AppContainer extends Component{
 
 const mapStateToProps = state => {
     return {
-        countries: state.countries
+        countries: state.countries.all
     }
 }
   

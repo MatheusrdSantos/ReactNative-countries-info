@@ -2,7 +2,13 @@ import axios from 'axios';
 
 export const COUNTRY_ACTIONS = {
     FETCH_COUNTRIES_NAME: 'FETCH_COUNTRIES_NAME',
-    REQUEST_COUNTRIES: 'REQUEST_COUNTRIES'
+    REQUEST_COUNTRIES: 'REQUEST_COUNTRIES',
+    SELECT_COUNTRY: 'SELECT_COUNTRY'
+}
+
+export const INITIAL_STATE = {
+    all:[],
+    selectedCountry: {}
 }
 
 export function fetchCountries(data){
@@ -16,5 +22,8 @@ export const requestCountries = () => {
             dispatch(fetchCountries(res.data))
         })
     }
-    
+}
+
+export function selectCountry(country){
+    return {type: COUNTRY_ACTIONS.SELECT_COUNTRY, payload: country}
 }

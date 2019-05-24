@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
 import {View, Text} from 'react-native';
+import {connect} from 'react-redux';
 import styles from './styles';
+import {selectCountry} from '../../actions'
 class CountryListItem extends Component{
     callDetails = () => {
+        this.props.setCountry(this.props.country)
         this.props.callDetails(this.props.country)
     }
 
@@ -16,4 +19,13 @@ class CountryListItem extends Component{
     }
 }
 
-export default CountryListItem;
+const mapStateToProps = state => {
+    return {
+    }
+}
+const mapDispatchToProps = dispatch => {
+    return {
+        setCountry: (country) => dispatch(selectCountry(country))
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(CountryListItem);
