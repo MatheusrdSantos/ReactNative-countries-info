@@ -18,7 +18,7 @@ export function fetchCountries(data){
 }
 export const requestCountries = () => {
     return (dispatch) =>{
-        return axios.get('https://restcountries.eu/rest/v2/all?fields=name;population;capital;area;flag;alpha2Code')
+        return axios.get('https://restcountries.eu/rest/v2/all?fields=name;population;capital;area;flag;alpha2Code;demonym;borders;region;subregion;currencies;regionalBlocs;languages;timezones')
         .then(res => {
             console.log(res.data);
             dispatch(fetchCountries(res.data))
