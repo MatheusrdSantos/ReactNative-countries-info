@@ -22,6 +22,9 @@ export const requestCountries = () => {
         .then(res => {
             console.log(res.data);
             dispatch(fetchCountries(res.data))
+        }).catch(err => {
+            console.log(err);
+            alert("Conection fail! Check your WI-FI connection.");
         })
     }
 }
